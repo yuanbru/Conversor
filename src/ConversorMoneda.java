@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.text.DecimalFormat;
 
 public class ConversorMoneda {
 
@@ -15,6 +16,8 @@ public class ConversorMoneda {
 						+ " \n>No se acepta coma (,) para decimales<\nEJ: 24 ó 14.5 ",
 				"Input", JOptionPane.QUESTION_MESSAGE);
 
+		
+		//While para controlar el ingreso de solo numeros 
 		while (!soloNumeros(valorConvertir)) {
 
 			JOptionPane.showMessageDialog(null, "Valor no válido");
@@ -24,8 +27,18 @@ public class ConversorMoneda {
 					"ERROR !", JOptionPane.ERROR_MESSAGE);
 
 		}
-
+		
+		int resp= JOptionPane.showConfirmDialog(null, "¿Está seguro?");
+		
+		//Inicialización de variable double para convertir el valor ingresado por el usuario
+		double valor = Double.parseDouble(valorConvertir);
+		
+		//Inicializacion de variable double para realizar la operacion de conversion
+		double conversion;
+		
+		//If para controlar la opcion de conversion elegida
 		if (conversor == "Conversor de moneda") {
+
 			Object moneda = JOptionPane.showInputDialog(null, "Elije la moneda a la que deseas convertir tu dinero",
 					"Monedas", JOptionPane.DEFAULT_OPTION, null,
 					new Object[] { "De Pesos Colombianos a Dólar", "De Pesos Colombianos a Euros",
@@ -35,84 +48,86 @@ public class ConversorMoneda {
 							"De Yen Japonés a Pesos Colombianos", "De Won Surcoreano a Pesos Colombianos" },
 					"De Pesos Colombianos a Dólar");
 
-			// USAR SWITCH CASE PARA HACER LAS CONVERSIONES DE MONEDAS
+			// Se usa switch para controlar la opcion seleccionada por el usuario
 
 			switch (moneda.toString()) {
 
 			case "De Pesos Colombianos a Dólar":
 
-				double pesoDolar = redondear(Double.parseDouble(valorConvertir) * 0.00024);
-
-				JOptionPane.showMessageDialog(null, "Tienes $" + pesoDolar + " Dólar(es)");
+				conversion = valor * 0.00024;
+				JOptionPane.showMessageDialog(null, "Tienes $" + redondear(conversion) + " Dólar(es)");
 
 				break;
 
 			case "De Pesos Colombianos a Euros":
 
-				double pesoEuro = redondear(Double.parseDouble(valorConvertir) *1);
+				conversion = valor * 0.00022;
 
-				JOptionPane.showMessageDialog(null, "Tienes $" + pesoEuro + " Euro(s)");
+				JOptionPane.showMessageDialog(null, "Tienes $" + redondear(conversion) + " Euro(s)");
 
 				break;
 
 			case "De Pesos Colombianos a Libras Esterlinas":
 
-				double pesoLibra = redondear(Double.parseDouble(valorConvertir) * 2);
+				conversion = valor * 0.00019;
 
-				JOptionPane.showMessageDialog(null, "Tienes $" + pesoLibra + " Libra(s) Esterlina(s)");
+				JOptionPane.showMessageDialog(null, "Tienes $" + redondear(conversion) + " Libra(s) Esterlina(s)");
 
 				break;
 
 			case "De Pesos Colombianos a Yen Japonés":
 
-				double pesoYen = redondear(Double.parseDouble(valorConvertir) *3 );
+				conversion = valor * 0.035;
 
-				JOptionPane.showMessageDialog(null, "Tienes $" + pesoYen + " Yen(es) Japonés(es)");
+				JOptionPane.showMessageDialog(null, "Tienes $" + redondear(conversion) + " Yen(es) Japonés(es)");
 
 				break;
 
 			case "De Pesos Colombianos a Won Surcoreano":
 
-				double pesoWon = redondear(Double.parseDouble(valorConvertir) *4 );
+				conversion = valor * 0.31;
 
-				JOptionPane.showMessageDialog(null, "Tienes $" + pesoWon + " Won(es) Surcoreano(s)");
+				JOptionPane.showMessageDialog(null, "Tienes $" + redondear(conversion) + " Won(es) Surcoreano(s)");
 
 				break;
 
 			case "De Dólar a Pesos Colombianos":
 
-				double dolarPeso = redondear(Double.parseDouble(valorConvertir) * 5);
+				conversion = valor * 4157.98;
 
-				JOptionPane.showMessageDialog(null, "Tienes $" + dolarPeso + " Pesos Colombianos ");
+				JOptionPane.showMessageDialog(null, "Tienes $" + redondear(conversion) + " Pesos Colombianos ");
 
 				break;
+
 			case "De Euros a Pesos Colombianos":
 
-				double euroPeso = redondear(Double.parseDouble(valorConvertir) * 0.00024);
+				conversion = valor * 4523.49;
 
-				JOptionPane.showMessageDialog(null, "Tienes $" + euroPeso + " Pesos Colombianos ");
+				JOptionPane.showMessageDialog(null, "Tienes $" + redondear(conversion) + " Pesos Colombianos");
 
 				break;
 
 			case "De Libras Esterlinas a Pesos Colombianos":
 
-				double libraPeso = redondear(Double.parseDouble(valorConvertir) * 0.00024);
+				conversion = valor * 5285.83;
 
-				JOptionPane.showMessageDialog(null, "Tienes $" + libraPeso + " Pesos Colombianos ");
+				JOptionPane.showMessageDialog(null, "Tienes $" + redondear(conversion) + " Pesos Colombianos ");
 
 				break;
+
 			case "De Yen Japonés a Pesos Colombianos":
 
-				double yenPeso = redondear(Double.parseDouble(valorConvertir) * 0.00024);
+				conversion = valor * 28.78;
 
-				JOptionPane.showMessageDialog(null, "Tienes $" + yenPeso + " Pesos Colombianos ");
+				JOptionPane.showMessageDialog(null, "Tienes $" + redondear(conversion) + " Pesos Colombianos ");
 
 				break;
+
 			case "De Won Surcoreano a Pesos Colombianos":
 
-				double wonPeso = redondear(Double.parseDouble(valorConvertir) * 0.00024);
+				conversion = valor * 3.21;
 
-				JOptionPane.showMessageDialog(null, "Tienes $" + wonPeso + " Pesos Colombianos ");
+				JOptionPane.showMessageDialog(null, "Tienes $" + redondear(conversion) + " Pesos Colombianos ");
 
 				break;
 
@@ -138,9 +153,10 @@ public class ConversorMoneda {
 		}
 	}
 
-	private static double redondear(double moneda) {
+	private static String redondear(double valor) {
 
-		return Math.round(moneda * 100.0) / 100.0;
+		DecimalFormat decimalFormat = new DecimalFormat("#,###.##");
+		return decimalFormat.format(valor);
 
 	}
 
