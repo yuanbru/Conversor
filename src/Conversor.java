@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.text.DecimalFormat;
 
-public class ConversorMoneda {
+public class Conversor {
 
 	public static void main(String[] args) {
 
