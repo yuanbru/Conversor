@@ -55,6 +55,28 @@ _Asegúrate de ingresar solo números y utiliza el punto `(.)` para representar 
 
 _Recuerda que debes seguir las instrucciones y asegurarte de ingresar los valores correctamente para obtener resultados precisos._
 
+## Vista previa 🔍
+
+### Menú Conversor
+
+![MenuConversor](ScreenshotConversor/MenuConversor.png)}
+
+### Conversor Moneda 💱 
+
+![ConversorMoneda](ScreenshotConversor/ConversorMoneda.png)
+
+### Conversor Temperatura 🌡️ 
+
+![ConversorTemperatura](ScreenshotConversor/ConversorTemperatura.png)
+
+### Conversor Velocidad 🚅
+
+![ConversorVelocidad](ScreenshotConversor/ConversorVelocidad.png)
+
+### ¿Desea Continuar? / Finalizado
+
+![DeseaContinuar](ScreenshotConversor/SeleccionaOpcion.png)  ![Finalizar](ScreenshotConversor/Finalizado.png)
+
 ## Contribución 🖇️
 
 Actualmente no se aceptan contribuciones para este proyecto.
